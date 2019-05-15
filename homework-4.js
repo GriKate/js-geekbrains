@@ -1,30 +1,24 @@
 // 1. Функция, преобразующая число в объект
 function toObject(num) {
-    var numObj = {
-        units: 0,
-        tens: 0,
-        hundreds: 0,
-    };
-    if (num < 0 || num > 999) {
+    // var numObj = {
+    //     units: 0,
+    //     dozen: 0,
+    //     hundreds: 0,
+    // };
+    if (isNaN(+num) || num < 0 || num > 999) {
         alert("Ошибка! Некорректное значение");
-        return numObj;
+        return {};
     } else {
         num += '';
         var numArr = num.split('');
-        if (numArr.length === 1) {
-            numObj.units = +numArr[0];
-        } else if (numArr.length === 2) {
-            numObj.units = +numArr[1];
-            numObj.tens = +numArr[0];
-        } else if (numArr.length === 3) {
-            numObj.units = +numArr[2];
-            numObj.tens = +numArr[1];
-            numObj.hundreds = +numArr[0];
-        }
-        ;
+        var keys = ['units', 'dozen', 'hundreds'];
+        var numObj = {};
+        for (var i = numArr.length - 1; i >= 0; i--) {
+            var key = keys[numArr.length - 1 -  i];
+            numObj[key] = numArr[i];
+        };
         return numObj;
-    }
-    ;
+    };
 };
 var num = +prompt('Введите число от 0 до 999:');
 console.log(toObject(num));
