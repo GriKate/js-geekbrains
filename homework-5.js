@@ -91,18 +91,21 @@ function countBasketPrice() {
     for (var i = 0; i < products.length; i++) {
         basketSum += products[i].price * products[i].quantity;
     }
-    return basketSum;
+    // return basketSum;
+    var $basket = document.getElementsByClassName('basket')[0];
+    var $basketText = document.createElement('p');
+    $basketText.classList.add('text');
+    $basket.appendChild($basketText);
+
+    if (products.length === 0) {
+        $basketText.textContent = 'Корзина пуста';
+    } else {
+        $basketText.textContent = 'В корзине ' + (products.length) + ' товаров на сумму ' + basketSum + ' рублей';
+    }
 }
 
 var basketSum = countBasketPrice();
 
-var $basket = document.getElementsByClassName('basket')[0];
-var $basketText = document.createElement('p');
-$basketText.classList.add('text');
-$basket.appendChild($basketText);
 
-if (products.length === 0) {
-    $basketText.textContent = 'Корзина пуста';
-} else {
-    $basketText.textContent = 'В корзине ' + (products.length) + ' товаров на сумму ' + basketSum + ' рублей';
-}
+
+
