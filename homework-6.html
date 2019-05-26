@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            overflow: hidden;
+        }
+        
+        li {
+            list-style: none;
+        }
+
+        .header {
+            display: flex;
+            position: relative;
+            width: 100%;
+            height: 50px;
+            justify-content: flex-end;
+        }
+
+        #cart {
+            height: 30px;
+            padding: 0 10px 0;
+            margin-right: 50px;
+            color: #000;
+            font-weight: 700;
+            font-size: 16px;
+            border: 1px solid peru;
+            line-height: 30px;
+        }
+
+        #cart:hover #cart-drop {
+            display: block;
+        }
+
+        #cart-drop {
+            display: none;
+            position: absolute;
+            top: 30px;
+            right: 100px;
+            padding: 20px;
+            background-color: burlywood;
+        }
+
+        #cart-section {
+            display: none;
+        }
+
+        .cart-img {
+            width: 100px;
+        }
+
+        #catalog {
+            width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+        .catalog-button {
+            background-color: peru;
+        }
+
+        #overlay {
+            display: none;
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, .7);
+            z-index: 1;
+        }
+
+        .modal {
+            margin: 200px auto;
+            z-index: 2;
+            width: 500px;
+            height: 500px;
+            text-align: center;
+            background-color: #fff;
+        }
+        
+        .modal-button {
+            display: block;
+            width: 30px;
+            padding: 10px;
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+    </style>
+    <script src="06.js"></script>
+</head>
+<body>
+    <div id="template" style="display: none;">
+        <li class="catalog-item">
+            <img src="" alt="" class="catalog-img">
+            <h3 class="catalog-title"></h3>
+            <p class="catalog-price"></p>
+            <button class="catalog-button">Buy</button>
+        </li>
+    </div>
+    <div id="cart-section">
+        <img src="" alt="" class="cart-img">
+        <h4 class="cart-title"></h4>
+        <p class="cart-price"></p>
+        <button class="cart-button">X</button>
+        <h3 class="cart-total"></h3>
+    </div>
+    <div id="overlay">
+        <div class="modal">
+            <buttton class="modal-button">X</buttton>
+            <img src="" alt="" class="modal-img">
+        </div>
+    </div>
+    <div class="header">
+        <div id="cart">Корзина
+            <div id="cart-drop"></div>
+        </div>
+    </div>
+    <ul id="catalog"></ul>
+</body>
+</html>
