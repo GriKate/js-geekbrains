@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .block {
+            margin-top: 20px;
+            text-align: center;
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        .block-title {
+            height: 50px;
+        }
+
+        .continue-button {
+            line-height: 50px;
+            border: 1px solid black;
+        }
+
+        #cart-drop {
+            display: block;
+            padding: 20px;
+            background-color: burlywood;
+        }
+
+        #cart-section {
+            display: none;
+        }
+
+        .cart-wrapper {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px auto;
+        }
+
+        .cart-img {
+            width: 100px;
+            height: 100%;
+        }
+
+        .cart-button {
+            display: block;
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="cart-section">
+        <div class="cart-wrapper">
+            <img src="" alt="" class="cart-img">
+            <h4 class="cart-title"></h4>
+            <p class="cart-price"></p>
+            <p class="cart-quantity"></p>
+            <button class="cart-button"> X </button>
+        </div>
+        <h3 class="cart-total"></h3>
+    </div>
+    <div id="accordeon">
+        <h2>Корзина</h2>
+        <h3 class="block-title"><a class="tab">Состав корзины</a></h3>
+        <div id="content1" class="block active">
+            <div id="cart-drop"></div>
+            <a href="#content2" class="continue-button">Далее</a>
+        </div>
+        <h3 class="block-title"><a class="tab" >Адрес доставки</a></h3>
+        <div id="content2" class="block">
+            <p class="block-text">Адрес доставки</p>
+            <a href="#content3" class="continue-button">Далее</a>
+        </div>
+        <h3 class="block-title"><a class="tab" >Комментарий</a></h3>
+        <div id="content3" class="block">
+            <p class="block-text">Комментарий</p>
+            <a href="#content1" class="continue-button">Далее</a>
+        </div>
+    </div>
+    <script src="07.js"></script>
+</body>
+</html>
